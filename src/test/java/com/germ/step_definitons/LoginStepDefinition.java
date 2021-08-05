@@ -19,7 +19,7 @@ public class LoginStepDefinition {
     }
     @Then("user should not see {string} in text")
     public void user_should_not_see_in_text(String expected) {
-        BrowserUtils.waitForVisibility(loginPage.text, 20);
+        BrowserUtils.waitForClickability(loginPage.text, 20);
         String actual = loginPage.text.getText();
 
         Assert.assertTrue(actual.contains(expected));
